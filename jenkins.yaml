@@ -1,0 +1,381 @@
+jenkins:
+  agentProtocols:
+  - "JNLP4-connect"
+  - "Ping"
+  authorizationStrategy:
+    folderBased:
+      folderRoles:
+      - folders:
+        - "Training/ArquitecturaDeNegocio"
+        name: "ArquitecturaDeNegocio_Training_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Desarrollo/ArquitecturaDeNegocio"
+        name: "ArquitecturaDeNegocio_Desarrollo_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Produccion_build/ArquitecturaDeNegocio"
+        name: "ArquitecturaDeNegocio_Produccion_Build_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Desarrollo"
+        name: "Desarrollo_Read"
+        permissions:
+        - id: "Job/Read"
+        - id: "View/Read"
+        sids:
+        - "developer2"
+        - "developer1"
+      - folders:
+        - "Training/Arquitectura"
+        name: "Arquitectura_Training_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Produccion_deploy"
+        name: "Operaciones_Produccion_Deploy_Read_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Job/Read"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+        - id: "View/Read"
+        sids:
+        - "oper"
+      - folders:
+        - "Training/ArquitecturaDeSistemas"
+        name: "ArquitecturaDeSistemas_Training_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Produccion_build"
+        name: "Produccion_Build_Read"
+        permissions:
+        - id: "Job/Read"
+        - id: "View/Read"
+      - folders:
+        - "Produccion_build/ArquitecturaDeSistemas"
+        name: "ArquitecturaDeSistemas_Produccion_Build_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Desarrollo/Arquitectura"
+        name: "Arquitectura_Desarrollo_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+        sids:
+        - "developer1"
+      - folders:
+        - "Desarrollo/ArquitecturaDeSistemas"
+        name: "ArquitecturaDeSistemas_Desarrollo_Run"
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Produccion_deploy"
+        name: "Produccion_Deploy_Read "
+        permissions:
+        - id: "Job/Read"
+        - id: "View/Read"
+      - folders:
+        - "Produccion_build/Arquitectura"
+        name: "Arquitectura_Produccion_Build_Run "
+        permissions:
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+      - folders:
+        - "Training"
+        name: "Training_Read"
+        permissions:
+        - id: "Job/Read"
+        - id: "View/Read"
+      globalRoles:
+      - name: "Lectura_global"
+        permissions:
+        - id: "Overall/Read"
+        sids:
+        - "developer2"
+        - "oper"
+        - "developer1"
+      - name: "admin"
+        permissions:
+        - id: "Credentials/Create"
+        - id: "Credentials/Delete"
+        - id: "Credentials/ManageDomains"
+        - id: "Credentials/Update"
+        - id: "Credentials/UseItem"
+        - id: "Credentials/UseOwn"
+        - id: "Credentials/View"
+        - id: "Agent/Build"
+        - id: "Agent/Configure"
+        - id: "Agent/Connect"
+        - id: "Agent/Create"
+        - id: "Agent/Delete"
+        - id: "Agent/Disconnect"
+        - id: "Agent/ExtendedRead"
+        - id: "Agent/Provision"
+        - id: "Overall/Administer"
+        - id: "Overall/Manage"
+        - id: "Overall/Read"
+        - id: "Overall/SystemRead"
+        - id: "Job/Build"
+        - id: "Job/Cancel"
+        - id: "Job/Configure"
+        - id: "Job/Create"
+        - id: "Job/Delete"
+        - id: "Job/Discover"
+        - id: "Job/ExtendedRead"
+        - id: "Job/Move"
+        - id: "Job/Read"
+        - id: "Job/WipeOut"
+        - id: "Job/Workspace"
+        - id: "Run/Artifacts"
+        - id: "Run/Delete"
+        - id: "Run/Replay"
+        - id: "Run/Update"
+        - id: "View/Configure"
+        - id: "View/Create"
+        - id: "View/Delete"
+        - id: "View/Read"
+        - id: "SCM/Tag"
+        sids:
+        - "admin"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "jenkins.diagnostics.ControllerExecutorsNoAgents"
+  - "hudson.diagnosis.ReverseProxySetupMonitor"
+  labelAtoms:
+  - name: "built-in"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm:
+    local:
+      allowsSignup: false
+      enableCaptcha: false
+      users:
+      - id: "admin"
+        name: "admin"
+        properties:
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "juan.timon@inetum.com"
+        - "apiToken"
+      - id: "developer1"
+        name: "developer1"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "aaaa@aaa.com"
+      - id: "developer2"
+        name: "developer2"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "bbbb@aaa.com"
+      - id: "developerarq"
+        name: "developerArq"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "cccc@aaa.com"
+      - id: "jp1"
+        name: "jp1"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "ddd@aaa.com"
+      - id: "jp2"
+        name: "jp2"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "eee@aaa.com"
+      - id: "jparq"
+        name: "jpArq"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "fff@aaa.com"
+      - id: "oper"
+        name: "oper"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "oper@aaa.com"
+      - id: "support"
+        name: "support"
+        properties:
+        - "apiToken"
+        - "myView"
+        - preferredProvider:
+            providerId: "default"
+        - "timezone"
+        - mailer:
+            emailAddress: "suport@aaa.com"
+  slaveAgentPort: 50000
+  updateCenter:
+    sites:
+    - id: "default"
+      url: "https://updates.jenkins.io/update-center.json"
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+globalCredentialsConfiguration:
+  configuration:
+    providerFilter: "none"
+    typeFilter: "none"
+security:
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  gitHooks:
+    allowedOnAgents: false
+    allowedOnController: false
+  gitHostKeyVerificationConfiguration:
+    sshHostKeyVerificationStrategy: "knownHostsFileVerificationStrategy"
+  sSHD:
+    port: -1
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  buildStepOperation:
+    enabled: false
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    hookUrl: "http://localhost:8080/github-webhook/"
+  globalTimeOutConfiguration:
+    operations:
+    - "abortOperation"
+    overwriteable: false
+  injectionConfig:
+    allowUntrusted: false
+    enabled: false
+    injectCcudExtension: false
+    injectMavenExtension: false
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "Dirección no configurada todavía <nobody@nowhere>"
+    url: "http://localhost:8080/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  pollSCM:
+    pollingThreadCount: 10
+  scmGit:
+    addGitTagAction: false
+    allowSecondFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  timestamper:
+    allPipelines: false
+    elapsedTimeFormat: "'<b>'HH:mm:ss.S'</b> '"
+    systemTimeFormat: "'<b>'HH:mm:ss'</b> '"
+tool:
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"
