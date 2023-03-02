@@ -38,6 +38,7 @@ jenkins:
         sids:
         - "developer2"
         - "developer1"
+        - "oper"
       - folders:
         - "Training/Arquitectura"
         name: "Arquitectura_Training_Run"
